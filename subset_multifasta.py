@@ -1,7 +1,7 @@
 import os
 import sys
 import argparse
-#Developed Info
+#Developer Info
 print ("\n*********************************************************************************")
 print ("* Python script to subset multi fasta file using ids from another file\t\t*")
 print ("* Script Developed by\t:\tRam Sai Nanduri\t\t\t\t\t*")
