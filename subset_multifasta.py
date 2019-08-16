@@ -1,10 +1,21 @@
 import os
 import sys
+import argparse
+#Developed Info
+print ("\n*********************************************************************************")
+print ("* Python script to subset multi fasta file using ids from another file\t\t*")
+print ("* Script Developed by\t:\tRam Sai Nanduri\t\t\t\t\t*")
+print ("*********************************************************************************")
+##Argument parser
+parser = argparse.ArgumentParser(description="Subset Multi Fasta using Ids from another file.")
+parser.add_argument("-m", "--multifasta", metavar="multifasta", help="Input multi fasta file", type=str)
+parser.add_argument("-i", "--ids", metavar="ids", help="Input sequence Ids file", type=str)
+parser.add_argument("-v", "--version", help="Program's version", action='version', version='%(prog)s 1.0')
+args = parser.parse_args()
 
 #Reading user input file
-args = sys.argv[1:3]
-in_file = args[0]
-seq_ids = args[1]
+in_file = args.multifasta
+seq_ids = args.ids
 file_path = os.path.abspath(os.path.dirname(in_file))
 
 #reading multifasta file
