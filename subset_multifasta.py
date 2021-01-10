@@ -22,7 +22,7 @@ file_path = os.path.abspath(os.path.dirname(in_file))
 with open(in_file, "r") as fa:
     lines = fa.read().split('>')
     lines = lines[1:]
-    lines = ['>'+ seq for seq in lines]
+    #lines = ['>'+ seq for seq in lines]
     ids_seqs = {}
 
 for seqs in lines:
@@ -46,7 +46,7 @@ if os.path.exists("selected.fasta"):
 for individual_seq in selected_ids:
 	seq1 = selected_ids.get(individual_seq)
 	out_file=open(file_path+"/"+"selected.fasta", "a+")
-	out_file.write(individual_seq+"\n"+seq1+"\n")
+	out_file.write(">"+individual_seq+"\n"+seq1+"\n")
 	out_file.close()
 
 print ("\nSuccessfully extracted the sequences from the "+os.path.basename(in_file)+" for the ids provided in the "+os.path.basename(seq_ids))
